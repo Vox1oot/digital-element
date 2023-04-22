@@ -3,6 +3,7 @@ import styles from './Hero.module.scss';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
 import { ReactComponent as BurgerIcon } from '../../assets/icons/burger.svg';
 import { ReactComponent as HeroIllustration } from '../../assets/illustration.svg';
+import Button from '../Button';
 
 const Hero = () => {
     return (
@@ -21,9 +22,7 @@ const Hero = () => {
                         Faucibus tristique vulputate ultrices ut mauris tellus
                         at. Posuere sollicitudin odio tellus elit.
                     </p>
-                    <button className={styles.button} type="button">
-                        See Our Project
-                    </button>
+                    <Button text="See Our Project" />
                     <HeroIllustration className={styles.illustration} />
                 </div>
             </div>

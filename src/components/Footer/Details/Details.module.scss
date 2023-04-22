@@ -1,0 +1,31 @@
+.container {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+}
+
+.logo {
+    margin-right: 15px;
+}
+
+.companyName {
+    font-size: 28px;
+    line-height: 46px;
+    letter-spacing: 0.02em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.span {
+    margin-right: 16px;
+}
+
+.copyright {
+    margin-top: 64px;
+}
+

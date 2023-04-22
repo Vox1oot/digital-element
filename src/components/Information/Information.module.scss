@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 200px;
+}
+
+.h2 {
+    width: 358px;
+    height: 138px;
+    left: calc(100% - 85%);
+    top: calc(100% - 88%);
+    position: absolute;
+    font-family: 'Gilroy';
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: 0.05em;
+    color: #316099;
+}
