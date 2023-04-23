@@ -14,16 +14,24 @@
     &::before {
         content: '';
         position: absolute;
-        height: 860px;
+        height: 60%;
         width: 95%;
         background: #316099;
         border-radius: 0px 200px 0px 0px;
         left: 0;
         bottom: 0;
+
+        @media screen and (max-width: 530px) {
+            height: 78%;
+        }
     }
 }
 
 .wrapper {
     position: relative;
-    padding: 100px 210px 64px;
+    padding: 5% 10% 5%;
+
+    @media screen and (max-width: 768px) {
+        padding: 65px 90px 65px;
+    }
 }

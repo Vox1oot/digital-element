@@ -1,4 +1,7 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import toast from '../Toast';
 import styles from './Footer.module.scss';
 import Clients from './Clients';
 import Team from './Team';
@@ -9,15 +12,18 @@ const Footer = () => {
     const [modalIsOpen, setModalIsOpen] = React.useState(false);
     const [isSubmittedForm, setIsSubmittedForm] = React.useState(false);
 
-    console.log(isSubmittedForm);
-
-    const toggleOpenModal = () => {
+    const toggleOpenModal = React.useCallback(() => {
+        setIsSubmittedForm(false);
         setModalIsOpen(true);
-    };
+    }, []);
 
     const toggleCloseMOdal = () => {
         setModalIsOpen(false);
     };
+
+    if (isSubmittedForm) {
+        toast();
+    }
 
     return (
         <section className={styles.container}>
@@ -32,8 +38,8 @@ const Footer = () => {
                         handleSubmittedForm={setIsSubmittedForm}
                     />
                 )}
-                {isSubmittedForm && <div>Отправлено</div>}
             </div>
+            <ToastContainer />
         </section>
     );
 };

@@ -38,12 +38,12 @@ const dataInformation: IDataInformation[] = [
 
 const Information = () => (
     <div className={styles.container}>
-        {dataInformation.map((data: IDataInformation) => (
-            <Card key={data.id} {...data} />
-        ))}
         <h2 className={styles.h2}>
             What we do to help our client grow in digital era,
         </h2>
+        {dataInformation.map((data: IDataInformation) => (
+            <Card key={data.id} {...data} />
+        ))}
     </div>
 );
 

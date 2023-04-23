@@ -34,4 +34,4 @@ const Details = () => (
     </section>
 );
 
-export default Details;
+export default React.memo(Details);

@@ -8,14 +8,22 @@
     background: #FFFFFF;
     box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
+
+    @media screen and (max-width: 768px) {
+        margin: 30px auto;
+    }
+
+    @media screen and (max-width: 430px) {
+        width: 300px;
+    }
 }
 
 .wrapper {
-    padding: 50px;
+    padding: 10%;
 }
 
 .wrapperTop80 {
-    padding: 50px;
+    padding: 10%;
     position: relative;
     top: -80px;
 }
@@ -23,6 +31,10 @@
 .icon {
     position: relative;
     left: 20px;
+
+    @media screen and (max-width: 430px) {
+        left: 0;
+    }
 }
 
 .title {

@@ -6,11 +6,19 @@
     grid-template-rows: 1fr 1fr;
     justify-items: center;
     align-items: center;
-    padding: 200px;
+    padding: 10% 20%;
+
+    @media screen and (max-width: 1024px) {
+        padding: 5% 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 }
 
 .h2 {
-    width: 358px;
+    max-width: 358px;
     height: 138px;
     left: calc(100% - 85%);
     top: calc(100% - 88%);
@@ -20,4 +28,10 @@
     line-height: 46px;
     letter-spacing: 0.05em;
     color: #316099;
+
+    @media screen and (max-width: 768px) {
+        position: static;
+        margin: 40px auto;
+        text-align: justify;
+    }
 }

@@ -4,15 +4,27 @@
     gap: 32px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 }
 
 .h2 {
     font-size: 36px;
     line-height: 46px;
     letter-spacing: 0.05em;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 10%;
+    }
 }
 
 .button {
     grid-row: span 2;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 10%;
+    }
 }

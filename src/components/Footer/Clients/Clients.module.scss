@@ -1,6 +1,11 @@
 .clients {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 530px) {
+        flex-wrap: wrap;
+        margin-bottom: 25%;
+    }
 }
 
 .h2 {
@@ -30,13 +35,17 @@
     div:nth-child(4n+4) {
         border-right: none;
     }
+
+    @media screen and (max-width: 530px) {
+        display: none;
+    }
 }
 
 .logo {
     text-align: center;
     font-size: 20px;
     line-height: 46px;
-    padding: 30px;
+    padding: 10%;
     cursor: pointer;
 
     &:hover {

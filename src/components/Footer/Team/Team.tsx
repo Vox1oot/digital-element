@@ -20,4 +20,4 @@ const Team = ({ handleModal }: ITeam) => (
     </section>
 );
 
-export default Team;
+export default React.memo(Team);

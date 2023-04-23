@@ -5,6 +5,14 @@
     grid-template-rows: repeat(4, 1fr);
     align-items: center;
     gap: 20px;
+
+    @media screen and (max-width: 530px) {
+        display: block;
+
+        > * {
+            margin: 20px 0;
+        }
+    }
 }
 
 .logo {
