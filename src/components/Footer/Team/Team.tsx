@@ -3,7 +3,7 @@ import Button from '../../Button';
 import styles from './Team.module.scss';
 
 interface ITeam {
-    handleModal: (param: boolean) => void;
+    handleModal: () => void;
 }
 
 const Team = ({ handleModal }: ITeam) => (

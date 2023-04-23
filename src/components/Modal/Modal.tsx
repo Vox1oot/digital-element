@@ -2,15 +2,18 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useFormik } from 'formik';
+import cn from 'classnames';
 import styles from './Modal.module.scss';
 import Button from '../Button';
+import validationSchema from './schema';
 
 type ModalType = {
     isOpen: boolean;
-    handleModal: (param: boolean) => void;
+    handleModal: () => void;
+    handleSubmittedForm: (val: boolean) => void;
 };
 
-const Modal = ({ isOpen, handleModal }: ModalType) => {
+const Modal = ({ isOpen, handleModal, handleSubmittedForm }: ModalType) => {
     const inputName = React.useRef<HTMLInputElement>(null);
 
     const f = useFormik({
@@ -19,12 +22,17 @@ const Modal = ({ isOpen, handleModal }: ModalType) => {
             email: '',
             message: ''
         },
+        validationSchema,
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+            fetch('https://dummyjson.com/carts/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(values)
+            }).then((res) => res.json());
+            handleModal();
+            handleSubmittedForm(true);
         }
     });
-
-    console.log(f.values);
 
     React.useEffect(() => {
         if (inputName.current) {
@@ -34,17 +42,18 @@ const Modal = ({ isOpen, handleModal }: ModalType) => {
 
     React.useEffect(() => {
         if (isOpen) {
+            handleSubmittedForm(false);
             document.body.classList.add('modal-open');
         }
 
         return () => {
             document.body.classList.remove('modal-open');
         };
-    }, [isOpen]);
+    }, [isOpen, handleSubmittedForm]);
 
     const toggleModal = (event: React.SyntheticEvent<EventTarget>) => {
         if (event.target === event.currentTarget) {
-            handleModal(false);
+            handleModal();
         }
     };
 
@@ -60,7 +69,9 @@ const Modal = ({ isOpen, handleModal }: ModalType) => {
                             </label>
                             <input
                                 ref={inputName}
-                                className={styles.input}
+                                className={cn(styles.input, {
+                                    error: f.errors.name
+                                })}
                                 type="text"
                                 id="name"
                                 placeholder="Your Name"
@@ -74,7 +85,9 @@ const Modal = ({ isOpen, handleModal }: ModalType) => {
                                 Name
                             </label>
                             <input
-                                className={styles.input}
+                                className={cn(styles.input, {
+                                    error: f.errors.email
+                                })}
                                 type="email"
                                 id="email"
                                 placeholder="Your Email"
@@ -89,7 +102,9 @@ const Modal = ({ isOpen, handleModal }: ModalType) => {
                             </label>
                             <textarea
                                 id="message"
-                                className={styles.textarea}
+                                className={cn(styles.textarea, {
+                                    error: f.errors.message
+                                })}
                                 placeholder="Your Message"
                                 rows={7}
                                 autoComplete="off"
@@ -97,10 +112,15 @@ const Modal = ({ isOpen, handleModal }: ModalType) => {
                                 onChange={f.handleChange}
                             />
                         </div>
+                        <div className="modal-footer">
+                            <Button
+                                buttonType="submit"
+                                width="100"
+                                text="SUBMIT"
+                                isDisabled={!f.isValid}
+                            />
+                        </div>
                     </form>
-                </div>
-                <div className="modal-footer">
-                    <Button width="100" text="SUBMIT" />
                 </div>
             </div>
         </div>
