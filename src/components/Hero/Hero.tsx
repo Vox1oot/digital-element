@@ -11,7 +11,7 @@ const Hero = () => {
             <div className={styles.wrapper}>
                 <nav className={styles.navigation}>
                     <LogoIcon />
-                    <BurgerIcon />
+                    <BurgerIcon className={styles.burger} />
                 </nav>
                 <div className={styles.content}>
                     <h1 className={styles.h1}>

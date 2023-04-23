@@ -4,13 +4,12 @@
 }
 
 .wrapper {
-    position: relative;
     max-width: calc(100% - 200px);
     margin: 0px auto;
 }
 
 .navigation {
-    padding: 50px;
+    padding: 50px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,6 +43,10 @@
 
 .illustration {
     position: absolute;
-    top: 137px;
-    right: -81px;
+    top: 18%;
+    right: 3%;
+}
+
+.burger {
+    cursor: pointer;
 }

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import cn from 'classnames';
 import styles from './Card.module.scss';
+import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 
 interface iCard {
     id: number;
@@ -20,9 +20,10 @@ const Card = ({ id, icon: Icon, title, description }: iCard) => {
                     <Icon className={styles.icon} />
                     <div className={styles.title}>{title}</div>
                     <div className={styles.description}>{description}</div>
-                    <footer>
+                    <div className={styles.footerCard}>
                         <a href="#">Learn more</a>
-                    </footer>
+                        <Arrow />
+                    </div>
                 </div>
             </div>
         </div>
