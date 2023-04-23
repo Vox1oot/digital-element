@@ -15,3 +15,5 @@ ___
 3. ```$npm run build``` - create build
 4. ```$npm run clear``` - clear build dir
 5. ```$npm lint``` - start eslint
+
+#### Deploy -> [APP](https://digital-element-two.vercel.app/)
