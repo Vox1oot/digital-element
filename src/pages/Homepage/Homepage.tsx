@@ -5,11 +5,11 @@ import Footer from '../../components/Footer';
 
 const Homepage = () => {
     return (
-        <>
+        <main>
             <Hero />
             <Information />
             <Footer />
-        </>
+        </main>
     );
 };
 
